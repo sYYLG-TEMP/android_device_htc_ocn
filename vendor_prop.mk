@@ -232,4 +232,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # WFD
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.wfd.virtual=0 \
-    persist.debug.wfd.enable=1
+    persist.debug.wfd.enable=1 \
+    ro.havoc.maintainer=sYYLG

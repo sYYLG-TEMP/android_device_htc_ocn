@@ -358,4 +358,92 @@
 
    <!-- Device supports Sustained Performance Mode-->
    <bool name="config_sustainedPerformanceModeSupported">true</bool>
+
+   <!--For example, a device with notification and battery lights that supports
+         pulsating and RGB control would set this config to 107. -->
+    <integer name="config_deviceLightCapabilities">107</integer>
+
+    <!-- Color temperature settings for LiveDisplay. These were obtained by
+         measuring the display at various color balance levels. -->
+    <integer name="config_minColorTemperature">2500</integer>
+    <integer name="config_maxColorTemperature">25000</integer>
+
+    <!-- Corresponds to color balance level of zero, this is the native
+         display temperature -->
+    <integer name="config_dayColorTemperature">8000</integer>
+    <integer name="config_nightColorTemperature">4000</integer>
+
+    <!-- For high brightness mode 
+    <integer name="config_outdoorAmbientLux">20000</integer>-->
+
+    <!-- Disable this by default, since it's actually using the QC FOSS algorithm for
+         OLED displays and can cause a bit of discoloration. Reinvestigate after tuning -->
+    <bool name="config_defaultCABC">false</bool>
+
+    <!-- Turn on LiveDisplay auto mode by default -->
+    <integer name="config_defaultLiveDisplayMode">2</integer>
+
+    <!-- Should we filter any display modes which are unampped? -->
+    <bool name="config_filterDisplayModes">true</bool>
+
+    <!-- BurnIn protection. This should be enabled on devices that have OLED displays -->
+    <bool name="config_enableBurnInProtection">false</bool>
+
+        <!-- Hardware keys present on the device, stored as a bit field.
+         This integer should equal the sum of the corresponding value for each
+         of the following keys present:
+             1 - Home
+             2 - Back
+             4 - Menu
+             8 - Assistant (search)
+            16 - App switch
+            32 - Camera
+            64 - Volume rocker
+         For example, a device with Home, Back and Menu keys would set this
+         config to 7. -->
+    <integer name="config_deviceHardwareKeys">83</integer>
+
+    <!-- Hardware keys present on the device with the ability to wake, stored as a bit field.
+         This integer should equal the sum of the corresponding value for each
+         of the following keys present:
+             1 - Home
+             2 - Back
+             4 - Menu
+             8 - Assistant (search)
+            16 - App switch
+            32 - Camera
+            64 - Volume rocker
+         For example, a device with Home, Back and Menu keys would set this
+         config to 7. -->
+    <integer name="config_deviceHardwareWakeKeys">64</integer>
+
+    <!-- Whether to enable smart clock feature -->
+    <bool name="config_enableSmartClock">true</bool>
+
+    <!-- Specify custom blanking delay of the display -->
+    <integer name="config_screen_off_delay">0</integer>
+
+    <!-- Whether the device supports Smart Pixels -->
+    <bool name="config_enableSmartPixels">true</bool>
+
+    <!-- Flag indicating whether we should enable smart battery. -->
+    <bool name="config_smart_battery_available">true</bool>
+
+    <!-- Enable dual LTE capability support-->
+    <bool name="config_dual_LTE_capability">true</bool>
+
+    <!-- Set this to true to enable the platform's auto-power-save modes like doze and
+          app standby.  These are not enabled by default because they require a standard
+          cloud-to-device messaging service for apps to interact correctly with the modes
+          (such as to be able to deliver an instant message to the device even when it is
+          dozing).  This should be enabled if you have such services and expect apps to
+          correctly use them when installed on your device.  Otherwise, keep this disabled
+          so that applications can still use their own mechanisms. -->
+    <bool name="config_enableAutoPowerModes">true</bool>
+
+    <!-- Whether the device has outdated qti-telephony-common.jar -->
+    <bool name="config_oldQtiTelephony">false</bool>
+
+    <!-- Whether device ignores the RSSNR signal implementation -->
+    <bool name="config_ignoreRssnrSignalLevel">true</bool>
 </resources>

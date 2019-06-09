@@ -20,6 +20,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/htc/ocn/ocn-vendor.mk)
 
+# Call ThirdParty
+$(call inherit-product-if-exists, device/htc/ocn/thirdparty/config.mk)
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
@@ -155,10 +158,6 @@ PRODUCT_PACKAGES += \
     cneapiclient \
     com.quicinc.cne \
     services-ext
-
-# Gestures
-PRODUCT_PACKAGES += \
-GestureHandler
 
 # Display
 PRODUCT_PACKAGES += \
@@ -400,10 +399,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
     android.hardware.vibrator@1.0-service
-
-# Trust HAL
-PRODUCT_PACKAGES += \
-    vendor.lineage.trust@1.0-service
 
 # VNDK
 PRODUCT_PACKAGES += \
